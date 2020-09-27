@@ -1,15 +1,37 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Stock Price Webpage";
 }
+
+<!DOCTYPE html>
+<html>
 <body>
-    <div class="text-center">
-        <h1 class="display-4">Stock Price Website</h1>
+    <div class="text-center mx-5" id="app">
+        <div class="bg-faded p-1">
+            <h1>
+                Search Stock Prices:
+            </h1>
+        </div>
         <form>
-            <input type="text" name="company" id="company-input" />
-            <button onclick="getDailyStockPrice()">Submit</button>
+            <div class="input-group input-group-lg mb-4">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Previous Market Day High and Low</span>
+                </div>
+                <input type="text" class="form-control" name="company" id="company-input" />
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-dark" v-on:click="getDailyStockPrice">Submit</button>
+                </div>
+            </div>
+            <div class="badge badge-danger" style="float:left">
+                <h3>Low: {{ low }}</h3>
+            </div>
+            <div class="badge badge-success" style="float:right">
+                <h3>High: {{ high }}</h3>
+            </div>
         </form>
     </div>
+    <script src="/lib/vue/vue.js"></script>
     <script src="js/site.js"></script>
 </body>
+</html>

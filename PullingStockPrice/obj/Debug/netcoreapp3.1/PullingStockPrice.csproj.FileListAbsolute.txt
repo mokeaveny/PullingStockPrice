@@ -12,8 +12,6 @@ C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\bin\D
 C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.csprojAssemblyReference.cache
 C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.AssemblyInfoInputs.cache
 C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.AssemblyInfo.cs
-C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.csproj.CoreCompileInputs.cache
-C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.RazorAssemblyInfo.cache
 C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.RazorAssemblyInfo.cs
 C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.TagHelpers.input.cache
@@ -35,3 +33,6 @@ C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\D
 C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.pdb
 C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.genruntimeconfig.cache
 C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.csproj.CopyComplete
+C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\bin\Debug\netcoreapp3.1\libman.json
+C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.csproj.CoreCompileInputs.cache
+C:\Users\micha\Desktop\Web Development\PullingStockPrice\PullingStockPrice\obj\Debug\netcoreapp3.1\PullingStockPrice.MvcApplicationPartsAssemblyInfo.cache
