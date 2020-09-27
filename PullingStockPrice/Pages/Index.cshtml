@@ -23,11 +23,23 @@
                     <button type="button" class="btn btn-dark" v-on:click="getDailyStockPrice">Submit</button>
                 </div>
             </div>
-            <div class="badge badge-danger" style="float:left">
+            <div class="badge badge-danger mb-4" style="float:left">
                 <h3>Low: {{ low }}</h3>
             </div>
-            <div class="badge badge-success" style="float:right">
+            <div class="badge badge-success mb-4" style="float:right">
                 <h3>High: {{ high }}</h3>
+            </div>
+            <div class="input-group input-group-lg my-4">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Current Market Price</span>
+                </div>
+                <input type="text" class="form-control" name="current-price" id="current-price-input" />
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-dark" v-on:click="getCurrentStockPrice">Submit</button>
+                </div>
+            </div>
+            <div class="badge badge-info">
+                <h3>Current Price: {{ currentPrice }}</h3>
             </div>
         </form>
     </div>
