@@ -7,20 +7,26 @@
     const response = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${company}&outputsize=compact&apikey=51WURQPBUP1HGNHB`, { mode: 'cors' })
     const stockData = await response.json();
     console.log(stockData);
-    const yesterdayDate = getYesterdayDate().toString();
+    var yesterdayDate = getYesterdayDate().toString();
     var yesterdayData = stockData["Time Series (Daily)"][yesterdayDate]
-    console.log(yesterdayData)
-    // Need to build in an exception if the day is a weekend.
+    // Condition to check if the current date is a Sunday, therefore gets the high and low from the Friday before the markets closed.
+    if (typeof yesterdayData != 'string')
+    {
+        yesterdayDate = getYesterdayDate(1).toString();  
+        yesterdayData = stockData["Time Series (Daily)"][yesterdayDate]
+        console.log(yesterdayData);
+    }
+    // Gets the high and low from the day before or the Friday if it's the weekend, for the inputted stock.
     var yesterdayHigh = yesterdayData["2. high"]
     var yesterdayLow = yesterdayData["3. low"]
     console.log(yesterdayHigh);
     console.log(yesterdayLow);
 }
 
-function getYesterdayDate() {
-    var yesterday = new Date();
+function getYesterdayDate(shiftDay = 0) {
+    var today = new Date();
     // Just in case the month is between 10 and 12
-    var currentMonth = yesterday.getMonth();
+    var currentMonth = today.getMonth();
     currentMonth = currentMonth + 1;
     if (currentMonth < 10) {
         currentMonth = currentMonth.toString();
@@ -30,10 +36,7 @@ function getYesterdayDate() {
     {
         currentMonth = currentMonth.toString();
     }
-    var yesterday = yesterday.getFullYear() + '-' + currentMonth + '-' + (yesterday.getDate() -1);
-    return yesterday;
+    var today = today.getFullYear() + '-' + currentMonth + '-' + (today.getDate() -1 -shiftDay);
+    return today;
 }
 
-async function getHigh() {
-
-}
