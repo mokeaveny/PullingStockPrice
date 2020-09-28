@@ -12,6 +12,7 @@
             <h1>
                 Search Stock Prices:
             </h1>
+            <h3 style="color: #778899">Current Time (EST): {{ time }}</h3>
         </div>
         <form>
             <div class="input-group input-group-lg mb-4">
@@ -24,10 +25,10 @@
                 </div>
             </div>
             <div class="badge badge-danger mb-4" style="float:left">
-                <h3>Low: {{ low }}</h3>
+                <h3>Low: {{ low }} </h3>
             </div>
             <div class="badge badge-success mb-4" style="float:right">
-                <h3>High: {{ high }}</h3>
+                <h3>High: {{ high }} </h3>
             </div>
             <div class="input-group input-group-lg my-4">
                 <div class="input-group-prepend">
@@ -39,7 +40,7 @@
                 </div>
             </div>
             <div class="badge badge-info">
-                <h3>Current Price: {{ currentPrice }}</h3>
+                <h3>Current Price (Previous Day): {{ currentPrice }} </h3>
             </div>
         </form>
     </div>

@@ -3,7 +3,8 @@
     data: {
         high: '',
         low: '',
-        currentPrice: ''
+        currentPrice: '',
+        time: ''
     },
     methods: {
         getDailyStockPrice: async function () {
@@ -58,27 +59,37 @@
             const response = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${company}&interval=1min&outputsize=full&apikey=51WURQPBUP1HGNHB`, { mode: 'cors' })
             const stockData = await response.json();
             console.log(stockData);
-            var currentDate = this.getCurrentDay().toString();
-            console.log(currentDate);
+            var currentDate = this.getCurrentDay(1).toString();
             // Get the current time in hours and minutes to work out the current market price.
             var currentTime = this.getCurrentTime().toString();
             console.log(currentDate + " " + currentTime + ":00");
             var currentMarketPrice = stockData["Time Series (1min)"][currentDate + " " + currentTime + ":00"];
-            // var currentMarketPrice = stockData["Time Series (1min)"]["2020-09-25 16:00:00"]["1. open"];
 
-            // If the returned object is of type undefined thent the market must be closed.
             if (typeof currentMarketPrice != 'string') {
-                this.currentPrice = "MARKET IS CLOSED";
+                currentDate = this.getCurrentDay(2).toString();
+                currentMarketPrice = stockData["Time Series (1min)"][currentDate + " " + currentTime + ":00"];
+                console.log(currentMarketPrice);
             }
-            // Else set the currentPrice to the currentMarketPrice.
-            else {
-                this.currentPrice = currentMarketPrice;
+
+            if (typeof currentMarketPrice != 'string') {
+                currentDate = this.getCurrentDay(3).toString();
+                currentMarketPrice = stockData["Time Series (1min)"][currentDate + " " + currentTime + ":00"];
+                console.log(currentMarketPrice);
             }
+
+            // var currentMarketPrice = stockData["Time Series (1min)"]["2020-09-25 16:00:00"]["1. open"];
+            this.currentPrice = currentMarketPrice["1. open"];
         },
         getCurrentTime: function () {
             var today = new Date();
             var hour = today.getHours();
+            // Convert to EST
+            hour = hour - 5;
             var minutes = today.getMinutes();
+
+            if (hour < 0) {
+                hour = 24 + hour;
+            }
 
             if (hour < 10) {
                 hour = hour.toString();
@@ -87,6 +98,8 @@
             else {
                 hour = hour.toString();
             }
+
+            // Perform check whether minutes == 0. If it is then minutes = 59 and hour -= 1
 
             if (minutes < 10) {
                 minutes = minutes.toString();
@@ -99,6 +112,30 @@
         }
     }
 });
+
+// Working timer that is updated every second.
+var timerID = setInterval(updateTime, 1000);
+updateTime();
+
+function updateTime() {
+    var currentDate = new Date();
+    var hour = currentDate.getHours();
+    hour = hour - 5;
+    if (hour < 0) {
+        hour = 24 + hour;
+    }
+
+    app.time = zeroPadding(hour, 2) + ":" + zeroPadding(currentDate.getMinutes(), 2) + ":" + zeroPadding(
+        currentDate.getSeconds(), 2);
+
+    function zeroPadding(num, digit) {
+        var zero = '';
+        for (var i = 0; i < digit; i++) {
+            zero += '0';
+        }
+        return (zero + num).slice(-digit);
+    }
+}
 
 
 
