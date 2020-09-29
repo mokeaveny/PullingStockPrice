@@ -1,0 +1,69 @@
+﻿footer {
+    width: 100%;
+    vertical-align: bottom;
+    background-color: #87CEFA;
+}
+
+#current-price-container {
+    background-color: #17a2b8;
+    display: inline-block;
+    font-weight: 700;
+    color: white;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    text-align: center;
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+    border-bottom-left-radius: 0.25em;
+    border-bottom-right-radius: 0.25em;
+    line-height: 1;
+}
+
+@media only screen and (max-width: 376px)
+{
+    #previous-day-high-low-prepend
+    {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    #company-input
+    {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    #previous-day-high-low-append
+    {
+        width: 100%;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+    
+    #previous-day-current-price-prepend
+    {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    #previous-day-current-price-prepend-text 
+    {
+        width: 100%;
+        text-align: center;
+    }
+
+    #current-price-input
+    {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    #previous-day-current-price-append
+    {
+        width: 100%;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+}

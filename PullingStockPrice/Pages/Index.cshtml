@@ -7,42 +7,40 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <div class="text-center mx-5" id="app">
+    <div class="text-center" id="app">
         <div class="bg-faded p-1">
             <h1>
                 Search Stock Prices:
             </h1>
             <h3 style="color: #778899">Current Time (EST): {{ time }}</h3>
         </div>
-        <form>
-            <div class="input-group input-group-lg mb-4">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Previous Market Day High and Low</span>
-                </div>
-                <input type="text" class="form-control" name="company" id="company-input" />
-                <div class="input-group-append">
-                    <button type="button" class="btn btn-dark" onclick="getDailyStockPrice()">Submit</button>
-                </div>
+        <div class="input-group input-group-lg mb-4">
+            <div class="input-group-prepend" id="previous-day-high-low-prepend">
+                <span class="input-group-text">Previous Market Day High and Low</span>
             </div>
-            <div class="badge badge-danger mb-4" style="float:left">
-                <h3>Low: {{ low }} </h3>
+            <input type="text" class="form-control" name="company" id="company-input" />
+            <div class="input-group-append" id="previous-day-high-low-append">
+                <button type="button" class="btn btn-dark" onclick="getDailyStockPrice()">Submit</button>
             </div>
-            <div class="badge badge-success mb-4" style="float:right">
-                <h3>High: {{ high }} </h3>
+        </div>
+        <div class="badge badge-danger mb-4" style="float:left">
+            <h3>Low: {{ low }} </h3>
+        </div>
+        <div class="badge badge-success mb-4" style="float:right">
+            <h3>High: {{ high }} </h3>
+        </div>
+        <div class="input-group input-group-lg my-4">
+            <div class="input-group-prepend" id="previous-day-current-price-prepend">
+                <span class="input-group-text" id="previous-day-current-price-prepend-text">Current Market Price</span>
             </div>
-            <div class="input-group input-group-lg my-4">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Current Market Price</span>
-                </div>
-                <input type="text" class="form-control" name="current-price" id="current-price-input" />
-                <div class="input-group-append">
-                    <button type="button" class="btn btn-dark" onclick="getCurrentStockPrice()">Submit</button>
-                </div>
+            <input type="text" class="form-control" name="current-price" id="current-price-input" />
+            <div class="input-group-append" id="previous-day-current-price-append">
+                <button type="button" class="btn btn-dark" onclick="getCurrentStockPrice()">Submit</button>
             </div>
-            <div class="badge badge-info">
-                <h3>Current Price (Previous Day): {{ currentPrice }} </h3>
-            </div>
-        </form>
+        </div>
+        <div id="current-price-container">
+            <h3>Current Price (Previous Day): {{ currentPrice }} </h3>
+        </div>
     </div>
     <script src="/lib/vue/vue.js"></script>
     <script src="js/site.js"></script>
