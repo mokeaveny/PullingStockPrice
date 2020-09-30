@@ -10,13 +10,13 @@
     <div class="text-center" id="app">
         <div class="bg-faded p-1">
             <h1>
-                Search Stock Prices:
+                Search Stock Prices (US Stocks Only):
             </h1>
             <h3 style="color: #778899">Current Time (EST): {{ time }}</h3>
         </div>
         <div class="input-group input-group-lg mb-4">
             <div class="input-group-prepend" id="previous-day-high-low-prepend">
-                <span class="input-group-text">Previous Market Day High and Low</span>
+                <span class="input-group-text" id="previous-day-high-low-prepend-text">Previous Market Day High and Low</span>
             </div>
             <input type="text" class="form-control" name="company" id="company-input" />
             <div class="input-group-append" id="previous-day-high-low-append">

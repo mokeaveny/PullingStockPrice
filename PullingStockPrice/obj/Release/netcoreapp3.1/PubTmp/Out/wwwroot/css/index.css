@@ -21,53 +21,6 @@
     line-height: 1;
 }
 
-@media only screen and (max-width: 415px)
-{
-    #previous-day-high-low-prepend {
-        width: 100%;
-        margin-bottom: 5px;
-    }
-
-    #previous-day-high-low-prepend-text {
-        width: 100%;
-        text-align: center;
-    }
-
-    #company-input {
-        width: 100%;
-        margin-bottom: 5px;
-    }
-
-    #previous-day-high-low-append {
-        width: 100%;
-        margin-left: 37.5%;
-        margin-right: 37.5%;
-        text-align: center;
-    }
-
-    #previous-day-current-price-prepend {
-        width: 100%;
-        margin-bottom: 5px;
-    }
-
-    #previous-day-current-price-prepend-text {
-        width: 100%;
-        text-align: center;
-    }
-
-    #current-price-input {
-        width: 100%;
-        margin-bottom: 5px;
-    }
-
-    #previous-day-current-price-append {
-        width: 100%;
-        margin-left: 37.5%;
-        margin-right: 37.5%;
-    }
-
-}
-
 @media only screen and (max-width: 376px)
 {
     #previous-day-high-low-prepend
@@ -114,4 +67,3 @@
         margin-right: 35%;
     }
 }
-
