@@ -48,8 +48,34 @@ function getCurrentDay(shiftDay = 0) {
     var today = new Date();
     // Just in case the month is between 10 and 12
     var currentMonth = today.getMonth();
-    var currentDay = today.getDate() - shiftDay;
     currentMonth = currentMonth + 1;
+    var currentDay = today.getDate() - shiftDay;
+
+    // Perform checks to return the correct day of the most recent market day dependent on the 
+    if (currentDay <= 0) {
+        // Perform check during the next month, therefore adding 31 to the currentDay in February for example.
+        if (currentMonth == 1 || currentMonth == 2 || currentMonth == 4 || currentMonth == 6 || currentMonth == 8 || currentMonth == 9
+            || currentMonth == 11) {
+            console.log("The day is now less than or equal to 0");
+            // Go back a month
+            currentMonth -= 1;
+            // Now in a 31 day month
+            currentDay += 31;
+        }
+        else if (currentMonth == 5 || currentMonth == 7 || currentMonth == 10 || currentMonth == 12) {
+            // Go back a month
+            currentMonth -= 1;
+            // Now in a 30 day month
+            currentDay += 30;
+        }
+        else
+        {
+            currentMonth -= 1;
+            // Now in February
+            curerntDay += 28;
+        }
+    }
+    
     if (currentMonth < 10) {
         currentMonth = currentMonth.toString();
         currentMonth = '0' + currentMonth;
