@@ -30,11 +30,13 @@ async function getDailyStockPrice() {
     // Gets the high and low from the day before or the Friday if it's the weekend, for the inputted stock.
     if (typeof yesterdayData === 'undefined') {
         yesterdayDate = getCurrentDay(2).toString();
+        yesterdayData = stockData["Time Series (Daily)"][yesterdayDate];
         console.log(yesterdayDate);
     }
 
     if (typeof yesterdayData === 'undefined') {
         yesterdayDate = getCurrentDay(3).toString();
+        yesterdayData = stockData["Time Series (Daily)"][yesterdayDate];
         console.log(yesterdayDate);
     }
     var yesterdayHigh = yesterdayData["2. high"]
